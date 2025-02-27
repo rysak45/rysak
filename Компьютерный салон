@@ -1,0 +1,46 @@
+-- Таблица "Клиенты"
+CREATE TABLE Клиенты (
+    Клиента_ID INT PRIMARY KEY,
+    ФИО VARCHAR(255), 
+    Контактный номер VARCHAR(255),
+    Электронная почта VARCHAR(255),
+    Адрес VARCHAR(255)
+);
+
+-- Таблица "Сотрудники"
+CREATE TABLE Сотрудники (
+    Сотрудника_ID INT PRIMARY KEY,
+    ID_Компьютера INT,
+    ФИО VARCHAR(255),
+    Должность TEXT,
+    Контактный номер VARCHAR(255),
+    Электронная почта VARCHAR(255)
+);
+
+-- Таблица "Компьютеры"
+CREATE TABLE Компьютеры (
+    ID_Компьютера INT PRIMARY KEY,
+    Марка VARCHAR(255),
+    Модель VARCHAR(255),
+    Характеристика VARCHAR(255)
+);
+
+-- Таблица "Услуги"
+CREATE TABLE Услуги (
+    Услуга_ID INT PRIMARY KEY,
+    Заказ_ID INT,
+    Ремонтные работы VARCHAR(255),
+    Описание VARCHAR(255),
+    Цена VARCHAR(255)
+    
+);
+
+-- Таблица "Заказ"
+CREATE TABLE Заказ (
+    Заказа_ID INT PRIMARY KEY,
+    Клиента_ID INT,
+    Компьютера_ID INT,
+    Сотрудника_ID INT,
+    Дата заказа VARCHAR(255),
+    Общая стоимость VARCHAR(255),
+);
